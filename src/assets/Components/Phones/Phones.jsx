@@ -33,26 +33,30 @@ const Phones = () => {
 
     return (
         <div>
-            {loading && <div>
-                <BallTriangle
-                    height={100}
-                    width={100}
-                    radius={5}
-                    color="#4fa94d"
-                    ariaLabel="ball-triangle-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    visible={true}
-                />
-            </div>}
+            <div>
+                {loading && <div>
+                    <BallTriangle
+                        height={100}
+                        width={100}
+                        radius={5}
+                        color="#4fa94d"
+                        ariaLabel="ball-triangle-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                    />
+                </div>}
+            </div>
 
-            <h1>Phones: {phones.length}</h1>
-            <BarChart width={1000} height={400} data={phones}>
-                <XAxis dataKey='name'></XAxis>
-                <YAxis ></YAxis>
-                <Tooltip></Tooltip>
-                <Bar dataKey="price" fill="#8884d8" />
-            </BarChart>
+            <div className="mt-14">
+                <h1>Phones: {phones.length}</h1>
+                <BarChart width={1000} height={400} data={phones}>
+                    <XAxis dataKey='name'></XAxis>
+                    <YAxis ></YAxis>
+                    <Tooltip></Tooltip>
+                    <Bar dataKey="price" fill="#8884d8" />
+                </BarChart>
+            </div>
         </div>
     );
 };
